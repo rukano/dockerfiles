@@ -1,0 +1,11 @@
+FROM ubuntu
+
+RUN \
+  apt-get -qq update && \
+  apt-get -y upgrade && \
+  apt-get install -y software-properties-common && \
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys FABAEF95 && \
+  add-apt-repository ppa:supercollider/ppa && \
+  apt-get update && \
+  sudo apt-get install supercollider && \
+  rm -rf /var/lib/apt/lists/*
