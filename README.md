@@ -26,17 +26,19 @@
 
 As jack is not yet working, the `--device` micht not be needed
 
-+ Run and shell
++ Run container with shell
 
 `docker run -it --rm --privileged=true --device=/dev/snd:/dev/snd rukano/supercollider /bin/bash`
 
-+ Run sclang interactively
++ Run sclang directly interactively
 
 `docker run -it --rm --privileged=true --device=/dev/snd:/dev/snd rukano/supercollider sclang`
 
 + Run sclang and pass command file (and eventually synts)
 
 *TODO*
+
++ NOTE: you can use `0.exit` in sclang to finish a script with a graceful exit.
 
 ## jack
 
