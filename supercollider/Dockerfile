@@ -28,6 +28,7 @@ RUN mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share
 RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated 
 RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
+RUN mkdir -p /supercollider/code
 
 # --- ports
 EXPOSE 57110:57110/udp
@@ -37,4 +38,4 @@ WORKDIR /supercollider
 
 RUN rm -rfd temp
 
-VOLUME ["/supercollider/code", "/usr/local/share/SuperCollider/Extensions"]
+# VOLUME ["/supercollider/code", "/usr/local/share/SuperCollider/Extensions"]
