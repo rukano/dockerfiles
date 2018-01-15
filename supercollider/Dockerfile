@@ -35,6 +35,6 @@ EXPOSE 57120:57120/udp
 
 WORKDIR /supercollider
 
-run rm -rfd temp
+RUN rm -rfd temp
 
 VOLUME ["/supercollider/code", "/usr/local/share/SuperCollider/Extensions"]
