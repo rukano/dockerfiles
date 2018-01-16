@@ -1,0 +1,3 @@
+supercollider/*.aif*
+supercollider/**/*.aif*
+supercollider/code/*.aif*
