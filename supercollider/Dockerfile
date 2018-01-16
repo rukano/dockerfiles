@@ -30,6 +30,8 @@ RUN mkdir -p /root/.local/share/SuperCollider/Extensions
 RUN mkdir -p /supercollider/code
 
 COPY startup.scd /supercollider/startup.scd
+COPY generate.sh /supercollider/generate.sh
+RUN chmod +x /supercollider/generate.sh
 
 # --- ports
 EXPOSE 57110:57110/udp
