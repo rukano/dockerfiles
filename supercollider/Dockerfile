@@ -41,4 +41,4 @@ WORKDIR /supercollider
 
 RUN rm -rfd temp
 
-# VOLUME ["/supercollider/code", "/usr/local/share/SuperCollider/Extensions"]
+VOLUME ["/supercollider/code"]
