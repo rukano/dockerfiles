@@ -29,6 +29,8 @@ RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
 RUN mkdir -p /supercollider/code
 
+COPY startup.scd /supercollider/startup.scd
+
 # --- ports
 EXPOSE 57110:57110/udp
 EXPOSE 57120:57120/udp
