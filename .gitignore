@@ -1,3 +1,7 @@
 supercollider/*.aif*
 supercollider/**/*.aif*
 supercollider/code/*.aif*
+
+supercollider/*.wav*
+supercollider/**/*.wav*
+supercollider/code/*.wav*
