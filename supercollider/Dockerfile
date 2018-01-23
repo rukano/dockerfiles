@@ -22,7 +22,7 @@ RUN \
     make install
 
 # --- remove and add relevant directories
-RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated 
+# RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated 
 RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
 

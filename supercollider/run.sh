@@ -1,1 +1,1 @@
-docker run -it --rm --name generator --volume $PWD/code:/tmp/code --volume $PWD/out:/tmp/out rukano/supercollider sclang $1
+docker run -d --rm --name sc --volume $PWD/code:/tmp/code --volume $PWD/out:/tmp/out -p 57120:57120/udp -p 57110:57110/udp rukano/supercollider sclang $1
