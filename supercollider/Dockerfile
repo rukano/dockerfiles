@@ -31,6 +31,8 @@ RUN mkdir -p /supercollider/code
 
 COPY startup.scd /supercollider/startup.scd
 COPY generate.sh /supercollider/generate.sh
+COPY code/* /supercollider/code/
+
 RUN chmod +x /supercollider/generate.sh
 
 # --- ports
@@ -41,4 +43,6 @@ WORKDIR /supercollider
 
 RUN rm -rfd temp
 
-VOLUME ["/supercollider/code"]
+CMD ["/bin/bash", "/supercollider/generate.sh"]
+
+# VOLUME ["/supercollider/code"]
