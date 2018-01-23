@@ -28,12 +28,13 @@ RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated
 RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
 RUN mkdir -p /supercollider/code
+RUN mkdir -p /rendered
 
 COPY startup.scd /supercollider/startup.scd
-COPY generate.sh /supercollider/generate.sh
+COPY generate.sh /generate.sh
 COPY code/* /supercollider/code/
 
-RUN chmod +x /supercollider/generate.sh
+RUN chmod +x /generate.sh
 
 # --- ports
 EXPOSE 57110:57110/udp
@@ -43,6 +44,6 @@ WORKDIR /supercollider
 
 RUN rm -rfd temp
 
-CMD ["/bin/bash", "/supercollider/generate.sh"]
+# CMD ["/bin/bash", "/generate.sh"]
 
-# VOLUME ["/supercollider/code"]
+# VOLUME ["/rendered"]
