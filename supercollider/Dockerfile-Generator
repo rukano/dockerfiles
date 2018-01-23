@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 
 WORKDIR /supercollider
 
@@ -27,6 +27,14 @@ RUN mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share
 RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated 
 RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
+RUN mkdir -p /supercollider/code
+RUN mkdir -p /rendered
+
+COPY startup.scd /supercollider/startup.scd
+COPY generate.sh /generate.sh
+COPY code/* /supercollider/code/
+
+RUN chmod +x /generate.sh
 
 # --- ports
 EXPOSE 57110:57110/udp
@@ -36,4 +44,6 @@ WORKDIR /supercollider
 
 RUN rm -rfd temp
 
-CMD ["sclang"]
+# CMD ["/bin/bash", "/generate.sh"]
+
+# VOLUME ["/rendered"]
