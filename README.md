@@ -24,13 +24,23 @@
 
 ### Run
 
-As jack is not yet working, the `--device` micht not be needed
+#### Latest (simple sclang + scsynth)
 
-+ Run container with shell
+The 'latest' tag is a simple image with sclang and scsynth working. To use the interactive sclang shell in our container you could run the container as:
+
+`docker run -it rukano/supercollider sclang`
+
+You will have sclang prompt. And finish by sending an EOF signal (Ctrl+D)
+
+#### Real-Time synthesis
+
+This is not yet tested and supportet, but the idea is to get jack packaged in the image so you can just start a process connected to it.
+
++ Run container with shell (not working)
 
 `docker run -it --rm --privileged=true --device=/dev/snd:/dev/snd rukano/supercollider /bin/bash`
 
-+ Run sclang directly interactively
++ Run sclang directly interactively (not working)
 
 `docker run -it --rm --privileged=true --device=/dev/snd:/dev/snd rukano/supercollider sclang`
 
