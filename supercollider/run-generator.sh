@@ -1,1 +1,0 @@
-docker run -it --rm --name generator --volume $PWD/rendered:/rendered rukano/supercollider:generator /generate.sh $1

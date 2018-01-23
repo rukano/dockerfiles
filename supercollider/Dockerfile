@@ -22,28 +22,19 @@ RUN \
     make install
 
 # --- remove and add relevant directories
-RUN mv /usr/local/share/SuperCollider/SCClassLibrary/Common/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/GUI
-RUN mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI /usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/JITLibGUI
 RUN rm -rfd /usr/local/share/SuperCollider/SCClassLibrary/deprecated 
 RUN mkdir -p /usr/local/share/SuperCollider/Extensions
 RUN mkdir -p /root/.local/share/SuperCollider/Extensions
-RUN mkdir -p /supercollider/code
-RUN mkdir -p /rendered
-
-COPY startup.scd /supercollider/startup.scd
-COPY generate.sh /generate.sh
-COPY code/* /supercollider/code/
-
-RUN chmod +x /generate.sh
 
 # --- ports
 EXPOSE 57110:57110/udp
 EXPOSE 57120:57120/udp
 
-WORKDIR /supercollider
-
+# --- remove build folder
 RUN rm -rfd temp
 
-# CMD ["/bin/bash", "/generate.sh"]
+# --- create runtime workspace
+WORKDIR /tmp/out
+WORKDIR /tmp/code
 
-# VOLUME ["/rendered"]
+CMD ["sclang"]
