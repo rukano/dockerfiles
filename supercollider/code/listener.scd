@@ -6,7 +6,7 @@ fork{
 		"OSC message received:".postln;
 		if ( c.size < 1) { "Warning: ID was empty".warn };
 		"Generating: %".format(c).postln;
-//		"/tmp/code/generate.scd".load;
+		"/tmp/code/generate.scd".load;
 	}, "/generate");
 	"Testing the reciever sending messages".postln;
 	n = NetAddr("localhost", 57120);
