@@ -1,5 +1,5 @@
 var score_path= "/tmp/out/score-" ++ c.asString ++ ".osc";
-var sound_path = "/tmp/out/out-"  ++ c.asString ++ ".wav";
+var sound_path = "/tmp/out/"  ++ c.asString ++ ".wav";
 
 "Loading synths...".postln;
 "/tmp/code/synth-defs.scd".load;
@@ -10,5 +10,9 @@ var sound_path = "/tmp/out/out-"  ++ c.asString ++ ".wav";
 "Rendering audio file...".postln;
 ("scsynth -N " ++ score_path ++ " _ " ++ sound_path ++ " 44100 WAVE int16 -o 1").systemCmd;
 
-"Removing temp score file".postln;
+"Converting to mp3".postln;
+("lame -b 128 " ++ sound_path).systemCmd;
+
+"Removing temp score and uncompressed file".postln;
 ("rm " ++ score_path).systemCmd;
+("rm " ++ sound_path).systemCmd;

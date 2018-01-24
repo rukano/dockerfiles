@@ -6,7 +6,7 @@ WORKDIR /supercollider
 RUN \
   apt-get -qq update && \
   apt-get -y upgrade && \
-  apt-get install -y nano wget git build-essential libjack-jackd2-dev libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev pkg-config cmake subversion && \
+  apt-get install -y nano wget git build-essential libjack-jackd2-dev libsndfile1-dev libasound2-dev libavahi-client-dev libicu-dev libreadline6-dev libfftw3-dev libxt-dev pkg-config cmake subversion lame && \
   rm -rf /var/lib/apt/lists/*
 
 WORKDIR temp

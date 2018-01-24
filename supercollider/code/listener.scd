@@ -7,10 +7,4 @@ fork{
 		"Generating: %".format(c).postln;
 		"/tmp/code/generate.scd".load;
 	}, "/generate");
-	// "Testing the reciever sending messages".postln;
-	// n = NetAddr("localhost", 57120);
-	// 1.do { |i|
-	// 	"Sent message locally %".format(i.asString).postln;
-	// 	n.sendMsg("/generate", i.asString);
-	// };
-}
+};
