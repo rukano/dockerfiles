@@ -16,3 +16,6 @@ var sound_path = "/tmp/out/"  ++ c.asString ++ ".wav";
 "Removing temp score and uncompressed file".postln;
 ("rm " ++ score_path).systemCmd;
 ("rm " ++ sound_path).systemCmd;
+
+"Removing old files".postln;
+("find /tmp/out/* -mtime +1 -type f -delete").postln;
